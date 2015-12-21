@@ -1,7 +1,8 @@
 'use strict';
 
-angular.module('myApp', [
-    'ui.router'
+angular.module('gameBoxArtSearchApp', [
+    'ui.router',
+    'gameBoxArtSearchApp.gamesDbNetService'
   ])
 
     .config(function($stateProvider, $urlRouterProvider) {
@@ -9,16 +10,15 @@ angular.module('myApp', [
     $urlRouterProvider.otherwise('/');
     
     $stateProvider
-        .state('home', {
+        .state('search', {
             url: '/',
-            templateUrl: 'views/main.html',
-            controller: 'MainCtrl'
+            templateUrl: 'views/search.html',
+            controller: 'SearchCtrl'
         })
 
-        .state('about', {
-          url: '/about',
-          templateUrl: 'views/about.html',
-          controller: 'AboutCtrl'
+        .state('boxArt', {
+          url: '/boxArt',
+          templateUrl: 'views/boxArt.html',
+          controller: 'BoxArtCtrl'
         });
-        
 });

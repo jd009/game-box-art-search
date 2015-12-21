@@ -1,18 +1,14 @@
 var express = require('express');
 var Path = require('path');
 var routes = express.Router();
+var gamesDbNet = require('./gamesDbNet');
 
-//
-//route to your index.html
-//
 var assetFolder = Path.resolve(__dirname, '../client/');
 routes.use(express.static(assetFolder));
 
-//
-// Example endpoint (also tested in test/server/index_test.js)
-//
-routes.get('/api/tags-example', function(req, res) {
-  res.send(['node', 'express', 'angular'])
+routes.get('/api/boxArtLinks', function(req, res) {
+  var searchTermString = req.query.searchTerm;
+  gamesDbNet.searchGame(searchTermString, req, res);
 });
 
 if(process.env.NODE_ENV !== 'test') {
