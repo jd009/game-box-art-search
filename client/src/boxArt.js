@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gameBoxArtSearchApp')
-  .controller('BoxArtCtrl', function($scope, GamesDbNet) {
+  .controller('BoxArtCtrl', function($scope, $location, GamesDbNet) {
     var frontBoxArtURL = GamesDbNet.getBoxFrontArtURL();
     $scope.isFrontBoxArtFound = frontBoxArtURL !== null;
     if($scope.isFrontBoxArtFound){
@@ -12,5 +12,9 @@ angular.module('gameBoxArtSearchApp')
     $scope.isBackBoxArtFound = backBoxArtURL !== null;
     if($scope.isBackBoxArtFound){
       $scope.backBoxArtURL = backBoxArtURL;
+    }
+
+    $scope.returnToSearch = function(){
+      $location.path('/');
     }
   });

@@ -25,3 +25,7 @@ h1{
 .boxArtNotFound{
   font-family: 'Press Start 2P', sans-serif;
 }
+
+#boxArtNavBar{
+  display: block;
+}
