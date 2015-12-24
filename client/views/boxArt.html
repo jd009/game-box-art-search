@@ -1,12 +1,12 @@
-<div class='jumbotron'>
+<div class='topPanel'>
   <div id="boxArtNavBar">
-    <button type="button" ng-click="returnToSearch()">Search again</button>
-    <h1>Box Art</h1>
+    <button type="button" class="btn btn-default btn-lg" ng-click="returnToSearch()">Search again</button>
+    <div class="appTitle">Box Art</div>
   </div>
+</div>
 
   <img class="frontBoxArtImage" ng-src={{frontBoxArtURL}} ng-show="isFrontBoxArtFound">
   <h2 class="boxArtNotFound frontBoxArtImage" ng-show=" ! isFrontBoxArtFound">Sorry, front box art not available</h2>
 
   <img class="backBoxArtImage" ng-src={{backBoxArtURL}} ng-show="isBackBoxArtFound">
   <h2 class="boxArtNotFound backBoxArtImage" ng-show=" ! isBackBoxArtFound">Sorry, back box art not available</h2>
-</div>

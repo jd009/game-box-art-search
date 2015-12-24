@@ -1,25 +1,43 @@
-h1{
+.appTitle{
   color: #2380E2;
   font-family: 'Press Start 2P', sans-serif;
   font-size: 24px;
 }
 
-.jumbotron{
+body{
+  background-color: gray;
+}
+
+.topPanel{
   background-color: #dcdcdc;
   text-align: center;
+  padding: 5px;
+  margin: 10px;
+  margin-bottom: 20px;
   border-radius: 2px;
+  -webkit-box-shadow: 6px 7px 24px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 7px 24px 1px rgba(0,0,0,0.75);
+  box-shadow: 6px 7px 24px 1px rgba(0,0,0,0.75);
+}
+
+.searchForm{
+  width: 50%;
+}
+
+#searchField{
+  width: 60%;
 }
 
 .frontBoxArtImage{
   float: left;
-  width: 50%;
-  height: 50%;
+  width: 48%;
+  height: 48%;
 }
 
 .backBoxArtImage{
   float: right;
-  width: 50%;
-  height: 50%;
+  width: 48%;
+  height: 48%;
 }
 
 .boxArtNotFound{
