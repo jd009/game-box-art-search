@@ -1,23 +1,8 @@
 h1{
   color: #2380E2;
-  font-family: sans-serif;
+  font-family: 'Press Start 2P', sans-serif;
+  font-size: 24px;
 }
-
-/*.btn {
-  display: block;
-  background: #639FDE;
-  border-radius: 28px;
-  font-family: sans-serif;
-  color: #ffffff;
-  font-size: 20px;
-  padding: 10px 20px 10px 20px;
-  text-decoration: none;
-  text-align: center;
-}
-
-.btn:hover{
-  background-color: #2380E2;
-}*/
 
 .jumbotron{
   background-color: #dcdcdc;
