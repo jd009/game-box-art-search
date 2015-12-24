@@ -84,13 +84,12 @@ function parseBoxArtURLs(responseXML){
     }
   }
 
-  if(frontImageUrl === null ||
-     backImageUrl === null){
-    throw "Couldn't find all box art";
-  }
-
-  var frontImageUrlComplete = baseImgUrl + frontImageUrl;
-  var backImageUrlComplete = baseImgUrl + backImageUrl;
+  var frontImageUrlComplete = frontImageUrl ?
+                              baseImgUrl + frontImageUrl :
+                              null;
+  var backImageUrlComplete = backImageUrl ?
+                             baseImgUrl + backImageUrl :
+                             null;
   return {
     frontImageUrlComplete: frontImageUrlComplete,
     backImageUrlComplete: backImageUrlComplete

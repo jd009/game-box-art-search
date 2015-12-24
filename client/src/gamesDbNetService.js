@@ -20,14 +20,10 @@ angular.module('gameBoxArtSearchApp.gamesDbNetService', [])
   };
 
   var getBoxFrontArtURL = function(){
-    if(frontImageURL === null) throw "Front of box artwork URL not initialized!";
-
     return frontImageURL;
   };
 
   var getBoxBackArtURL = function(){
-    if(backImageURL === null) throw "Back of box artwork URL not initialized!";
-
     return backImageURL;
   };
 
