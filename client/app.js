@@ -6,19 +6,25 @@ angular.module('gameBoxArtSearchApp', [
   ])
 
     .config(function($stateProvider, $urlRouterProvider) {
-    
-    $urlRouterProvider.otherwise('/');
-    
-    $stateProvider
-        .state('search', {
-            url: '/',
-            templateUrl: 'views/search.html',
-            controller: 'SearchCtrl'
-        })
 
-        .state('boxArt', {
-          url: '/boxArt',
-          templateUrl: 'views/boxArt.html',
-          controller: 'BoxArtCtrl'
-        });
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+      .state('search', {
+        url: '/',
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl'
+      })
+
+      .state('searchResults', {
+        url: '/searchResults',
+        templateUrl: 'views/searchResults.html',
+        controller: 'SearchResultsCtrl'
+      })
+
+      .state('boxArt', {
+        url: '/boxArt/:gameId',
+        templateUrl: 'views/boxArt.html',
+        controller: 'BoxArtCtrl'
+      });
 });

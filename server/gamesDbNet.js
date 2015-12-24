@@ -2,6 +2,7 @@ var httpRequest = require('http-request');
 var parse = require('xml-parser');
 
 module.exports.searchGame = searchGame;
+module.exports.fetchBoxArtURLs = fetchBoxArtURLs;
 
 function searchGame(searchString, req, res){
   var getGamesListBaseUrl =  "http://thegamesdb.net/api/GetGamesList.php?name=";
@@ -16,20 +17,29 @@ function searchGame(searchString, req, res){
     }
 
     var responseXML = result.buffer.toString();
-    var gameIdStr = parseGameId(responseXML);
-    fetchBoxArtURLs(gameIdStr, res);
+    var parsedSearchResults = parseSearchResults(responseXML);
+    res.send(parsedSearchResults);
+    res.end();
+    // fetchBoxArtURLs(gameIdStr, res);
   });
 }
 
-function parseGameId(responseXML){
+function parseSearchResults(responseXML){
   var responseObj = parse(responseXML);
+  var parsedSearchResults = [];
   var searchResults = responseObj.root.children;
-  var firstResult = searchResults[0];
-  var resultProperties = firstResult.children
-  var idProperty = resultProperties[0];
-  var idValueStr = idProperty.content;
+  for(var resultIndex = 0; resultIndex < searchResults.length; resultIndex++){
+    var currentSearchResult = {};
+    var resultProperties = searchResults[resultIndex].children;
+    for(var propertyIndex = 0; propertyIndex < resultProperties.length; propertyIndex++){
+      var propertyName = resultProperties[propertyIndex].name;
+      var propertyContent = resultProperties[propertyIndex].content;
+      currentSearchResult[propertyName] = propertyContent;
+    }
+    parsedSearchResults.push(currentSearchResult);
+  }
 
-  return idValueStr;
+  return parsedSearchResults;
 }
 
 function fetchBoxArtURLs(gameIdStr, res){

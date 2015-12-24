@@ -3,9 +3,9 @@
 angular.module('gameBoxArtSearchApp')
   .controller('SearchCtrl', function($scope, $location, GamesDbNet) {
     $scope.submit = function(){
-      GamesDbNet.searchBoxArtURLs($scope.searchTerm)
+      GamesDbNet.searchVideoGameTitle($scope.searchTerm)
       .then(function(){
-        $location.path('/boxArt');
+        $location.path('/searchResults');
       });
     }
   });

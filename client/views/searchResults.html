@@ -1,0 +1,9 @@
+<div class='topPanel'>
+  <button type="button" class="btn btn-default btn-lg" ng-click="returnToSearch()">New search</button>
+
+  <div class="searchResult" ng-repeat="result in searchResults">
+    <a href="/#/boxArt/{{result.id}}"><p>{{result.GameTitle}}</p></a>
+    <p>{{result.Platform}}</p>
+    <p>{{result.ReleaseDate}}</p>
+  </div>
+</div>

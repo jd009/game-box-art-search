@@ -6,9 +6,14 @@ var gamesDbNet = require('./gamesDbNet');
 var assetFolder = Path.resolve(__dirname, '../client/');
 routes.use(express.static(assetFolder));
 
-routes.get('/api/boxArtLinks', function(req, res) {
-  var searchTermString = req.query.searchTerm;
+routes.get('/api/searchGame', function(req, res) {
+  var searchTermString =req.query.searchTerm;
   gamesDbNet.searchGame(searchTermString, req, res);
+});
+
+routes.get('/api/boxArtLinks', function(req, res) {
+  var gameId = req.query.id;
+  gamesDbNet.fetchBoxArtURLs(gameId, res);
 });
 
 if(process.env.NODE_ENV !== 'test') {

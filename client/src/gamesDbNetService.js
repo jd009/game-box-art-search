@@ -1,21 +1,43 @@
 angular.module('gameBoxArtSearchApp.gamesDbNetService', [])
 
 .factory('GamesDbNet', function($http){
+  var searchResults = null;
   var frontImageURL = null;
   var backImageURL = null;
 
-  var searchBoxArtURLs = function(searchTerm){
-    var apiBoxArtBaseURL = '/api/boxArtLinks/';
-    var apiBoxArtCompleteURL = apiBoxArtBaseURL +
+  var searchVideoGameTitle = function(searchTerm){
+    var apiSearchGameBaseURL = '/api/searchGame/';
+    var apiSearchGameCompleteURL = apiSearchGameBaseURL +
                                '?searchTerm=' +
                                searchTerm;
+    return $http({
+      method: 'GET',
+      url: apiSearchGameCompleteURL
+    })
+    .then(function(response){
+      searchResults = response.data;
+    });
+  };
+
+  var getSearchResults = function(){
+    return searchResults;
+  }
+
+  var searchBoxArtURLs = function(gameId){
+    var apiBoxArtBaseURL = '/api/boxArtLinks/';
+    var apiBoxArtCompleteURL = apiBoxArtBaseURL +
+                               '?id=' +
+                               gameId;
     return $http({
       method: 'GET',
       url: apiBoxArtCompleteURL
     })
     .then(function(response){
-      frontImageURL = response.data.frontImageUrlComplete;
-      backImageURL = response.data.backImageUrlComplete;
+      var imageURLObj = {
+        frontImageURL: response.data.frontImageUrlComplete,
+        backImageURL: response.data.backImageUrlComplete
+      };
+      return imageURLObj;
     });
   };
 
@@ -28,6 +50,8 @@ angular.module('gameBoxArtSearchApp.gamesDbNetService', [])
   };
 
   return {
+    searchVideoGameTitle: searchVideoGameTitle,
+    getSearchResults: getSearchResults,
     searchBoxArtURLs: searchBoxArtURLs,
     getBoxFrontArtURL: getBoxFrontArtURL,
     getBoxBackArtURL: getBoxBackArtURL
