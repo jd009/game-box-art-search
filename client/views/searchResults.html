@@ -2,8 +2,8 @@
   <button type="button" class="btn btn-default btn-lg" ng-click="returnToSearch()">New search</button>
 
   <div class="searchResult" ng-repeat="result in searchResults">
-    <a href="/#/boxArt/{{result.id}}"><p>{{result.GameTitle}}</p></a>
-    <p>{{result.Platform}}</p>
-    <p>{{result.ReleaseDate}}</p>
+    <a href="/#/boxArt/{{result.id}}"><p class="searchResultText searchResultTitle">{{result.GameTitle}}</p></a>
+    <p class="searchResultText">{{result.Platform}}</p>
+    <p class="searchResultText">{{result.ReleaseDate}}</p>
   </div>
 </div>

@@ -38,6 +38,15 @@ body{
   margin-right: auto;
 }
 
+.searchResultText{
+  font-family: Roboto;
+}
+
+.searchResultTitle{
+  font-size: 2em;
+  margin: 0px;
+}
+
 .frontBoxArtImage{
   float: left;
   width: 48%;
