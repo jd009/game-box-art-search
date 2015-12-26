@@ -5,6 +5,7 @@
 }
 
 body{
+  background-image: url("assets/boxArtCollage.JPG");
   background-color: gray;
 }
 
@@ -49,12 +50,14 @@ body{
 
 .frontBoxArtImage{
   float: left;
+  background-color: white;
   width: 48%;
   height: 48%;
 }
 
 .backBoxArtImage{
   float: right;
+  background-color: white;
   width: 48%;
   height: 48%;
 }
