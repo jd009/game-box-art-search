@@ -113,6 +113,8 @@ function parseBoxArtURLs(responseXML){
 }
 
 function reformatReleaseDate(releaseDate){
+  if(releaseDate === "") return releaseDate;
+
   var reformattedDate = moment(releaseDate, "MM-DD-YYYY")
                         .format("MMMM Do, YYYY");
   return reformattedDate;
