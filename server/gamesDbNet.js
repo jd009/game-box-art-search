@@ -1,5 +1,6 @@
 var httpRequest = require('http-request');
 var parse = require('xml-parser');
+var moment = require('moment');
 
 module.exports.searchGame = searchGame;
 module.exports.fetchBoxArtURLs = fetchBoxArtURLs;
@@ -34,6 +35,10 @@ function parseSearchResults(responseXML){
     for(var propertyIndex = 0; propertyIndex < resultProperties.length; propertyIndex++){
       var propertyName = resultProperties[propertyIndex].name;
       var propertyContent = resultProperties[propertyIndex].content;
+      if(propertyName === 'ReleaseDate'){
+        propertyContent = reformatReleaseDate(propertyContent);
+      }
+
       currentSearchResult[propertyName] = propertyContent;
     }
     parsedSearchResults.push(currentSearchResult);
@@ -107,4 +112,9 @@ function parseBoxArtURLs(responseXML){
   };
 }
 
+function reformatReleaseDate(releaseDate){
+  var reformattedDate = moment(releaseDate, "MM-DD-YYYY")
+                        .format("MMMM Do, YYYY");
+  return reformattedDate;
+}
 

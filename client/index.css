@@ -60,12 +60,17 @@ body{
 .searchResultText{
   font-family: Roboto;
   font-size: 1.5em;
+  line-height: 100%;
 }
 
 .searchResultTitle{
   font-size: 2em;
-  margin: 0px;
+  margin: 0px 0px 10px 0px;
   line-height: 100%;
+}
+
+.searchResultDate{
+  font-style: italic;
 }
 
 .frontBoxArtImage{
