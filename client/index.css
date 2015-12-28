@@ -59,11 +59,13 @@ body{
 
 .searchResultText{
   font-family: Roboto;
+  font-size: 1.5em;
 }
 
 .searchResultTitle{
   font-size: 2em;
   margin: 0px;
+  line-height: 100%;
 }
 
 .frontBoxArtImage{
