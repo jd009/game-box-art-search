@@ -50,7 +50,7 @@ body{
 .searchResult{
   background-color: white;
   width: 30%;
-  border: 2px solid black;
+  border: 5px solid black;
   padding: 3px;
   margin: 3px;
   margin-left: auto;
@@ -58,6 +58,7 @@ body{
 }
 
 .searchResultText{
+  text-align: center;
   font-family: Roboto;
   font-size: 1.5em;
   line-height: 100%;
@@ -89,6 +90,7 @@ body{
 
 .boxArtMessage{
   font-family: 'Press Start 2P', sans-serif;
+  padding: 10px;
 }
 
 #boxArtNavBar{
