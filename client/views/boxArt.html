@@ -9,9 +9,9 @@
 <div class="boxArtMessage" ng-show=" ! imagesLoaded">Loading...</div>
 
 <div class="imageContainer" ng-show="imagesLoaded">
-  <img class="frontBoxArtImage" ng-src={{frontBoxArtURL}} ng-show="isFrontBoxArtFound">
-  <h2 class="boxArtMessage frontBoxArtImage" ng-show=" ! isFrontBoxArtFound">Sorry, front box art not available</h2>
+  <img class="boxArtImage frontBoxArtImage" ng-src={{frontBoxArtURL}} ng-show="isFrontBoxArtFound">
+  <h2 class="boxArtMessage boxArtImage frontBoxArtImage" ng-show=" ! isFrontBoxArtFound">Sorry, front box art not available</h2>
 
-  <img class="backBoxArtImage" ng-src={{backBoxArtURL}} ng-show="isBackBoxArtFound">
-  <h2 class="boxArtMessage backBoxArtImage" ng-show=" ! isBackBoxArtFound">Sorry, back box art not available</h2>
+  <img class="boxArtImage backBoxArtImage" ng-src={{backBoxArtURL}} ng-show="isBackBoxArtFound">
+  <h2 class="boxArtMessage boxArtImage backBoxArtImage" ng-show=" ! isBackBoxArtFound">Sorry, back box art not available</h2>
 </div>
