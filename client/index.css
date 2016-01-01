@@ -36,8 +36,8 @@ body{
   border: 3px solid black;
   border-radius: 2px;
   -webkit-box-shadow: 6px 7px 24px 1px rgba(0,0,0,0.75);
-  -moz-box-shadow: 6px 7px 24px 1px rgba(0,0,0,0.75);
-  box-shadow: 6px 7px 24px 1px rgba(0,0,0,0.75);
+  -moz-box-shadow:    6px 7px 24px 1px rgba(0,0,0,0.75);
+  box-shadow:         6px 7px 24px 1px rgba(0,0,0,0.75);
 }
 
 .searchForm{
@@ -48,12 +48,25 @@ body{
   width: 60%;
 }
 
+.navButton{
+  background-color: #a5cbf3;
+  margin: 5px;
+  -webkit-box-shadow: 2px 2px 3px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow:    2px 2px 3px 2px rgba(0,0,0,0.75);
+  box-shadow:         2px 2px 3px 2px rgba(0,0,0,0.75);
+}
+
+.navButton:hover{
+  background-color: white;
+  color: #2380E2;
+}
+
 .searchResult{
   background-color: white;
   width: 30%;
   border: 5px solid black;
   padding: 3px;
-  margin: 3px;
+  margin: 5px;
   margin-left: auto;
   margin-right: auto;
 }
