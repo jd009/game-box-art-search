@@ -7,4 +7,8 @@ angular.module('gameBoxArtSearchApp')
     $scope.returnToSearch = function(){
       $location.path('/');
     };
+
+    $scope.goToSearchResult = function(resultId){
+      $location.path('/boxArt/' + resultId);
+    };
   });

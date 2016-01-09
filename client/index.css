@@ -62,7 +62,7 @@ body{
 }
 
 .searchResult{
-  background-color: white;
+  background-color: #dcdcdc;
   width: 30%;
   border: 5px solid black;
   border-radius: 39px;
@@ -70,6 +70,13 @@ body{
   margin: 5px;
   margin-left: auto;
   margin-right: auto;
+  transition: all .2s ease-in-out;
+}
+
+.searchResult:hover{
+  cursor: pointer;
+  background-color: white;
+  transform: scale(1.02);
 }
 
 .searchResultText{
@@ -77,6 +84,7 @@ body{
   font-family: Roboto;
   font-size: 1.5em;
   line-height: 100%;
+  text-decoration: none !important;
 }
 
 .searchResultTitle{
